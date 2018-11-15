@@ -1,0 +1,10 @@
+.hyntecSlider {
+  &:focus {
+    outline: none;
+  }
+  .slider-img {
+    height: 60vh !important;
+    width: 100%;
+    opacity: 0.8;
+  }
+}

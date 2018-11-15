@@ -1,0 +1,23 @@
+<ngb-carousel *ngIf="images" class="hyntecSlider">
+  <ng-template ngbSlide>
+    <img [src]="images[0]" class="slider-img" alt="Random first slide" />
+    <!--
+      <div class="carousel-caption">
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    -->
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="images[1]" class="slider-img" alt="Random second slide" />
+    <div class="carousel-caption"></div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="images[2]" class="slider-img" alt="Random third slide" />
+    <div class="carousel-caption"></div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="images[3]" class="slider-img" alt="Random third slide" />
+    <div class="carousel-caption"></div>
+  </ng-template>
+</ngb-carousel>
