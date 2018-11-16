@@ -22,36 +22,36 @@
       id="navbarsDefault"
     >
       <ul class="navbar-nav ml-auto mr-lg-5">
-        <li class="nav-item mx-0 mx-lg-1" [routerLinkActive]="['active']">
+        <li class="nav-item mx-0 mx-lg-1" routerLinkActive="active">
           <a [routerLink]="['/home']" class="nav-link">Home</a>
         </li>
-        <li class="nav-item mx-0 mx-lg-1 dropdown" ngbDropdown>
+        <li
+          class="nav-item mx-0 mx-lg-1 dropdown"
+          ngbDropdown
+          routerLinkActive="active"
+        >
           <a class="nav-link dropdown-toggle" id="navdrop" ngbDropdownToggle
             >Services</a
           >
           <div class="dropdown-menu" aria-labelledby="navdrop" ngbDropdownMenu>
-            <a [routerLink]="['/services/service1']" class="dropdown-item"
-              >Annual Maintenance Contracts (AMC)</a
-            >
-            <a [routerLink]="['/services/service2']" class="dropdown-item"
-              >Desktop and User Support</a
-            >
-            <a [routerLink]="['/services/service3']" class="dropdown-item"
-              >Network Installation</a
-            >
-            <a [routerLink]="['/services/service3']" class="dropdown-item"
-              >Data Backup and Restoration</a
-            >
-            <a [routerLink]="['/services/service3']" class="dropdown-item"
-              >Desktops and Laptops Rental</a
-            >
-            <a [routerLink]="['/services/service3']" class="dropdown-item"
-              >Software and Hardware Installation</a
-            >
+            <ng-container *ngFor="let item of serviceList">
+              <a
+                [routerLink]="['/services/', item.routeLink]"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="dropdown-item"
+                >{{ item.name }}</a
+              >
+            </ng-container>
           </div>
         </li>
         <li class="nav-item mx-0 mx-lg-1">
-          <a [routerLink]="['/contact']" class="nav-link">Contact Us</a>
+          <a
+            [routerLink]="['/contact']"
+            routerLinkActive="active"
+            class="nav-link"
+            >Contact Us</a
+          >
         </li>
       </ul>
       <div class="text-center">

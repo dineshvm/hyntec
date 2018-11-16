@@ -1,0 +1,18 @@
+.contact-container {
+  .contact-header,
+  .contact-icon,
+  .contact-icon-title {
+    color: #1476ac;
+  }
+
+  .contact-phone,
+  .contact-mail {
+    a {
+      color: inherit;
+      &:hover {
+        text-decoration: none;
+      }
+      cursor: pointer;
+    }
+  }
+}

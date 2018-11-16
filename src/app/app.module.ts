@@ -6,27 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CarouselComponent } from './components/carousel/carousel.component';
-import { ServicesComponent } from './components/services/services.component';
-import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { ContactMapComponent } from './components/contact-us/contact-map/contact-map.component';
-
-import { SocialIconsComponent } from './components/footer/social-icons/social-icons.component';
-import { ContactFormComponent } from './components/contact-us/contact-form/contact-form.component';
-import { AboutComponent } from './components/home/about/about.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    COMPONENTS,
-    CarouselComponent,
-    ServicesComponent,
-    ContactUsComponent,
-    ContactMapComponent,
-    SocialIconsComponent,
-    ContactFormComponent,
-    AboutComponent
-  ],
+  declarations: [AppComponent, COMPONENTS],
   imports: [
     BrowserModule,
     AppRoutingModule,

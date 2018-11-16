@@ -49,7 +49,8 @@
 
 .dropdown-item.active,
 .dropdown-item:active {
-  color: #212529;
+  color: #ffffff;
+  background: #1476ac;
 }
 .dropdown-item:focus,
 .dropdown-item:hover {
@@ -69,7 +70,6 @@
   &:hover {
     background-color: #faa61a;
     border-color: #faa61a;
-    zoom: 1.1;
   }
   &:focus {
     outline: none;
