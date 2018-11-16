@@ -4,6 +4,7 @@
   "main": "node server.js",
   "scripts": {
     "ng": "ng",
+    "server": "node server.js",
     "start": "ng serve",
     "build": "ng build --prod  --output-path dist-prod/",
     "postinstall": "ng build --prod",
