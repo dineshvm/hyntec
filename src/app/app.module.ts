@@ -11,7 +11,6 @@ import { ServicesComponent } from './components/services/services.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ContactMapComponent } from './components/contact-us/contact-map/contact-map.component';
 
-import { AgmCoreModule } from '@agm/core';
 import { SocialIconsComponent } from './components/footer/social-icons/social-icons.component';
 import { ContactFormComponent } from './components/contact-us/contact-form/contact-form.component';
 import { AboutComponent } from './components/home/about/about.component';
@@ -32,10 +31,7 @@ import { AboutComponent } from './components/home/about/about.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgbModule.forRoot(),
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCWCMFdis6W971pRA2DRjdhM0_ZiD65yp4'
-    })
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
