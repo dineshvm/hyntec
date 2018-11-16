@@ -23,6 +23,8 @@ import { DataBackupComponent } from './components/services/data-backup/data-back
 import { RentalComponent } from './components/services/rental/rental.component';
 import { InstallationComponent } from './components/services/installation/installation.component';
 
+import { ServiceCardComponent } from './components/services/service-card/service-card.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -75,5 +77,6 @@ export const COMPONENTS = [
   DataBackupComponent,
   RentalComponent,
   InstallationComponent,
-  ContactComponent
+  ContactComponent,
+  ServiceCardComponent
 ];

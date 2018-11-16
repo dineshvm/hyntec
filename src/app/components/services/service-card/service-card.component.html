@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="text-center homeport2"><h2>Our Services</h2></div>
+  <div class="row service-container">
+    <ng-container *ngFor="let item of serviceList">
+      <div
+        class="col-6 col-sm-4 col-md-4 col-lg-2 col-xl-2 card portfolio-item"
+        [routerLink]="['/services/', item.routeLink]"
+      >
+        <div class="text-center service-card">
+          <i class="fa fa-circle fa-stack circle-icon">
+            <i class="fa {{item.iconClass}} fa-stack-1x service-icon"></i>
+          </i>
+          <div>{{ item.name }}</div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
