@@ -1,3 +1,85 @@
-<p>
-  contact works!
-</p>
+<!-- contact form -->
+<div class="container-fluid content-container">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-6 contact-form contact-content">
+      <form>
+        <div class="form-group">
+          <label class="control-label">Name:</label>
+          <input
+            type="text"
+            name="txtName"
+            class="form-control"
+            placeholder="Name*"
+            value=""
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Email:</label>
+          <input
+            type="email"
+            name="txtEmail"
+            class="form-control"
+            placeholder="Email *"
+            value=""
+          />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Mobile Number:</label>
+          <input
+            type="number"
+            name="txtPhone"
+            class="form-control"
+            placeholder="Mobile Number *"
+            value=""
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Subject:</label>
+          <input
+            type="text"
+            name="txtSubject"
+            class="form-control"
+            placeholder="Subject"
+            value=""
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Message:</label>
+          <textarea
+            name="txtMsg"
+            class="form-control"
+            placeholder="Your Message *"
+            style="width: 100%; height: 150px;"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group text-center">
+          <button
+            type="submit"
+            name="btnSubmit"
+            class="btnContact btn btn-primary submitBtn"
+            value="Send Message"
+          >
+            Send Message<i class="fa fa-paper-plane-o ml-1"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-12 col-md-6 col-lg-6 map-container contact-content">
+      <iframe
+        width="100%"
+        height="600px"
+        src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=12.8952263,77.6109379&amp;q=%235%2C%202nd%20Floor%2C%205th%20Cross%2C%20Opp%20SANA%20Super%20Mart%2C%20Kodichikknahalli%2C%20Bilekahalli%2C%20Bengaluru%2C%20Karnataka%20560076+(Hyntec%20IT%20Services)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+      >
+      </iframe>
+    </div>
+  </div>
+</div>
+<!-- contact form -->
