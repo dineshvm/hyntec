@@ -1,0 +1,50 @@
+.aboutus-container {
+  background-color: #ffffff;
+  padding: 2rem 0;
+  color: #1476ac;
+  h2 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+  @media (min-width: 992px) {
+    h2 {
+      font-size: 1.75rem;
+      line-height: 2.5rem;
+    }
+  }
+  .lead {
+    font-size: 1rem;
+    color: #22313e;
+    text-align: justify;
+  }
+}
+hr.star-light,
+hr.star-dark {
+  max-width: 10rem;
+  padding: 0;
+  text-align: center;
+  border: none;
+  border-top: solid 0.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr.star-light:after,
+hr.star-dark:after {
+  position: relative;
+  top: -0.8em;
+  display: inline-block;
+  padding: 0 0.25em;
+  content: '\f005';
+  font: normal normal normal 14px/1 FontAwesome;
+  font-weight: 900;
+  font-size: 1.25em;
+}
+
+hr.star-light {
+  border-color: #1476ac;
+}
+hr.star-light:after {
+  color: #1476ac;
+  background-color: #ffffff;
+}

@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-
-  constructor() { }
+  isLoading = true;
+  constructor() {}
 
   ngOnInit() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000);
   }
-
 }

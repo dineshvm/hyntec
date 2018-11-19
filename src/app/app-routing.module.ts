@@ -7,6 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ServicesComponent } from './components/services/services.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 import { AboutComponent } from './components/home/about/about.component';
 import { CarouselComponent } from './components/home/carousel/carousel.component';
@@ -25,10 +26,13 @@ import { InstallationComponent } from './components/services/installation/instal
 
 import { ServiceCardComponent } from './components/services/service-card/service-card.component';
 
+import { NotificationComponent } from './components/notification/notification.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: 'contactus', component: ContactComponent },
+  { path: 'aboutus', component: AboutUsComponent },
   { path: 'services/amc', component: AmcComponent, pathMatch: 'full' },
   {
     path: 'services/usersupport',
@@ -78,5 +82,7 @@ export const COMPONENTS = [
   RentalComponent,
   InstallationComponent,
   ContactComponent,
-  ServiceCardComponent
+  ServiceCardComponent,
+  AboutUsComponent,
+  NotificationComponent
 ];

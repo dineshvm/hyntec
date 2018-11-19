@@ -50,3 +50,9 @@
   border: none;
   cursor: pointer;
 }
+.map-container {
+  min-height: 500px;
+  .refresh-icon {
+    top: 32%;
+  }
+}

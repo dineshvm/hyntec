@@ -1,0 +1,36 @@
+.notification-container {
+  position: fixed;
+  z-index: 1020;
+  max-width: 312px;
+  width: auto;
+  min-height: 117px;
+  background-color: transparent;
+  float: right;
+  bottom: 1em;
+  right: 1em;
+
+  .content-box-icon {
+    width: 50px;
+    height: 50px;
+    background: #1476ac;
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    border-radius: 100%;
+    margin: auto;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+.popover-contact-container {
+  background: #1476ac !important;
+}
+.popover-contact {
+  a {
+    color: #ffffff;
+    &:hover {
+      text-decoration: none;
+    }
+    cursor: pointer;
+  }
+}

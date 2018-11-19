@@ -69,6 +69,12 @@
       </form>
     </div>
     <div class="col-12 col-md-6 col-lg-6 map-container contact-content">
+      <ng-container *ngIf="isLoading">
+        <i
+          class="fa fa-refresh fa-5x fa-stack-1x fa-spin refresh-icon"
+          aria-hidden="true"
+        ></i>
+      </ng-container>
       <iframe
         width="100%"
         height="600px"
