@@ -1,50 +1,67 @@
 <!-- contact form -->
 
 <div class="contact-form">
-  <form>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <input
         type="text"
+        formControlName="name"
         name="txtName"
         class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
         placeholder="Your Name *"
-        value=""
+        required
       />
+
+      <div *ngIf="submitted && f.name.errors" class="invalid-feedback"><div *ngIf="f.name.errors.required">Name is required</div></div>
     </div>
     <div class="form-group">
       <input
-        type="text"
+        type="email"
+        formControlName="email"
         name="txtEmail"
         class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
         placeholder="Your Email *"
-        value=""
+        required
       />
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email is required</div>
+        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+      </div>
     </div>
     <div class="form-group">
       <input
-        type="text"
+        type="number"
+        formControlName="mobile"
         name="txtPhone"
         class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }"
         placeholder="Your Phone Number *"
-        value=""
+        required
       />
+      <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+        <div *ngIf="f.mobile.errors.required">Phone Number is required</div>
+        <div *ngIf="f.mobile.errors.minlength">Phone Number must be at least 6 characters</div>
+      </div>
     </div>
 
     <div class="form-group">
       <textarea
         name="txtMsg"
         class="form-control"
+        formControlName="message"
+        [ngClass]="{ 'is-invalid': submitted && f.message.errors }"
         placeholder="Your Message *"
         style="width: 100%; height: 150px;"
+        required
       ></textarea>
+      <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
+        <div *ngIf="f.message.errors?.required">Message is required</div>
+      </div>
     </div>
     <div class="form-group text-center">
-      <button
-        type="submit"
-        name="btnSubmit"
-        class="btnContact btn btn-primary submitBtn"
-        value="Send Message"
-      >
+      <button type="submit" name="btnSubmit" class="btnContact btn btn-primary submitBtn" value="Send Message">
         Send Message<i class="fa fa-paper-plane-o ml-1"></i>
       </button>
     </div>

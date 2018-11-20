@@ -1,31 +1,16 @@
 <div class="notification-container" title="Contact Us">
-  <span
-    class="content-box-icon bg-light-blue"
-    [ngbPopover]="popContent"
-    placement="left"
-    popoverClass="popover-contact-container"
-  >
+  <span class="content-box-icon bg-light-blue" [ngbPopover]="popContent" placement="left" popoverClass="popover-contact-container">
     <i class="fa fa-headphones"></i>
   </span>
 </div>
 <ng-template #popContent>
   <div class="popover-contact">
-    <h5 class="notify-title">
-      <i class="fa fa-phone contact-icon" aria-hidden="true"></i> Contact Us
-    </h5>
+    <h5 class="notify-title"><i class="fa fa-phone contact-icon" aria-hidden="true"></i> Contact Us</h5>
+    <div><a class="phoneNo-link" href="tel:+918951411413">+91-8951411413</a></div>
     <div>
-      <a class="phoneNo-link" href="tel:+918951411413">+91-8951411413</a>
+      <span><a class="alternateNo-link" href="tel:+919036312990">+91-9036312990</a></span>
     </div>
-    <div>
-      <span
-        ><a class="alternateNo-link" href="tel:+919036312990"
-          >+91-9036312990</a
-        ></span
-      >
-    </div>
-    <h5 class="notify-title">
-      <i class="fa fa-envelope contact-icon" aria-hidden="true"></i> Mail Us
-    </h5>
+    <h5 class="notify-title"><i class="fa fa-envelope contact-icon" aria-hidden="true"></i> Mail Us</h5>
     <div><a href="mailto:info@hyntec.in">info@hyntec.in</a></div>
   </div>
 </ng-template>

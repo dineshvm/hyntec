@@ -58,11 +58,11 @@
 }
 
 .contact-form .form-control {
-  border-radius: 1rem;
+  border-radius: 0.25rem;
 }
 .btnContact {
   border: none;
-  padding: 0.25em;
+  padding: 0.25em 1em;
   background-color: #faa61a;
   border-color: #faa61a;
   color: #fff;
@@ -79,5 +79,24 @@
     background-color: #faa61a !important;
     border-color: #faa61a !important;
     box-shadow: none !important;
+  }
+}
+
+.contact-form-modal {
+  .modal-header {
+    padding: 0.2em 1em;
+    text-align: center;
+  }
+  .modal-header-text {
+    color: #1476ac;
+  }
+  .modal-title {
+    width: 100%;
+  }
+  .close {
+    padding-top: 1.25em;
+    &:focus {
+      outline: none;
+    }
   }
 }

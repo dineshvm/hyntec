@@ -27,6 +27,7 @@ import { InstallationComponent } from './components/services/installation/instal
 import { ServiceCardComponent } from './components/services/service-card/service-card.component';
 
 import { NotificationComponent } from './components/notification/notification.component';
+import { ModalFormComponent } from './components/header/modal-form/modal-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -84,5 +85,6 @@ export const COMPONENTS = [
   ContactComponent,
   ServiceCardComponent,
   AboutUsComponent,
-  NotificationComponent
+  NotificationComponent,
+  ModalFormComponent
 ];

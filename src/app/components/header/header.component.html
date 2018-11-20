@@ -1,10 +1,6 @@
-<nav
-  class="navbar navbar-fixed navbar-expand-md navbar-light bg-faded pl-2 pr-2"
->
+<nav class="navbar navbar-fixed navbar-expand-md fixed-top navbar-light bg-faded pl-2 pr-2">
   <div class="container navbar-container">
-    <a class="navbar-brand" [routerLink]="['/']"
-      ><img src="assets/images/logo.png" alt="Hyntec"
-    /></a>
+    <a class="navbar-brand" [routerLink]="['/']"><img src="assets/images/logo.png" alt="Hyntec"/></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -16,26 +12,12 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div
-      [ngbCollapse]="isNavbarCollapsed"
-      class="collapse navbar-collapse"
-      id="navbarsDefault"
-    >
+    <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
       <ul class="navbar-nav ml-auto mr-lg-5">
-        <li class="nav-item mx-0 mx-lg-1" routerLinkActive="active">
-          <a [routerLink]="['/home']" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item mx-0 mx-lg-1" routerLinkActive="active">
-          <a [routerLink]="['/aboutus']" class="nav-link">About Us</a>
-        </li>
-        <li
-          class="nav-item mx-0 mx-lg-1 dropdown"
-          ngbDropdown
-          routerLinkActive="active"
-        >
-          <a class="nav-link dropdown-toggle" id="navdrop" ngbDropdownToggle
-            >Services</a
-          >
+        <li class="nav-item mx-0 mx-lg-1" routerLinkActive="active"><a [routerLink]="['/home']" class="nav-link">Home</a></li>
+        <li class="nav-item mx-0 mx-lg-1" routerLinkActive="active"><a [routerLink]="['/aboutus']" class="nav-link">About Us</a></li>
+        <li class="nav-item mx-0 mx-lg-1 dropdown" ngbDropdown routerLinkActive="active">
+          <a class="nav-link dropdown-toggle" id="navdrop" ngbDropdownToggle>Services</a>
           <div class="dropdown-menu" aria-labelledby="navdrop" ngbDropdownMenu>
             <ng-container *ngFor="let item of serviceList">
               <a
@@ -48,28 +30,28 @@
             </ng-container>
           </div>
         </li>
-        <li class="nav-item mx-0 mx-lg-1">
-          <a
-            [routerLink]="['/contactus']"
-            routerLinkActive="active"
-            class="nav-link"
-            >Contact Us</a
-          >
-        </li>
+        <li class="nav-item mx-0 mx-lg-1"><a [routerLink]="['/contactus']" routerLinkActive="active" class="nav-link">Contact Us</a></li>
       </ul>
       <div class="text-center">
-        <button
-          type="submit"
-          name="btnSubmit"
-          class="btnContact btn btn-primary submitBtn"
-          value=""
-        >
+        <button type="submit" title="Get Support" name="btnSubmit" class="btnContact btn btn-primary submitBtn" (click)="open(content)">
           Get Support<i class="fa fa-phone ml-1"></i>
         </button>
       </div>
     </div>
   </div>
 </nav>
+
+<ng-template #content let-modal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">
+      <span class="modal-header-text">Send Enquiry</span>
+      <div><h6>Write to us for any business enquiries</h6></div>
+    </h4>
+
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()"><span aria-hidden="true">&times;</span></button>
+  </div>
+  <div class="modal-body"><app-modal-form></app-modal-form></div>
+</ng-template>
 
 <!--
   <nav class="navbar navbar-expand-lg navbar-dark">
