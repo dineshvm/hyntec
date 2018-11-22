@@ -48,3 +48,13 @@ hr.star-light:after {
   color: #1476ac;
   background-color: #ffffff;
 }
+
+.contact-phone {
+  a {
+    color: #22313e;
+    &:hover {
+      text-decoration: none;
+    }
+    cursor: pointer;
+  }
+}

@@ -62,6 +62,7 @@ export class ModalFormComponent implements OnInit {
   }
   onBackClick() {
     this.isCurrentEnabled = true;
+    this.submitted = false;
   }
   onSubmit() {
     console.log(this.contactModalForm.value);
