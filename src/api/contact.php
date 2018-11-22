@@ -26,41 +26,65 @@ if (isset($_POST->contact_name)) {
             
         $userdata = $conn->query($sql);
 		echo "Data Saved Successfully";
-  
+        $conn=null;
+        
     $date = date('d/m/Y');
     $time = date('H:i:s');
   
     $to      = 'info@hyntec.in'; 
-    $subject = 'Important:Contact the Customer';  
-    $headers = 'From: hemii1413@gmail.com' . "\r\n" . 
-              'Reply-To: hemii1413@gmail.com' . "\r\n" . 
-              'Content-Type: text/html; charset=ISO-8859-1\r\n' .
-              'X-Mailer: PHP/' . phpversion(); 
+    $subject = 'Important:Contact the Customer '.$contact_name.; 
+
+    /* $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    $headers .= 'From: hemii1413@gmail.com' . "\r\n";
+    $headers .= 'Cc: hemii1413@gmail.com' . "\r\n"; 
+    $headers .= 'Reply-To: hemii1413@gmail.com' . "\r\n"; 
+    $headers .= 'X-Mailer: PHP/' . phpversion();  */
+
+    $headers = "From: hemii1413@gmail.com" . "\r\n" ;
+    $headers .= "Reply-To: hemii1413@gmail.com" . "\r\n" ;
+    $headers .= "CC: hemii1413@gmail.com" . "\r\n";
+    $headers .= "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8" . "\r\b";
   
-    $message = 'Hello';
-  $htmlContent = '
-    <html>
-    <head>
-        <title>Welcome to CodexWorld</title>
-    </head>
-    <body>
-        <h1>Thanks you for joining with us!</h1>
-        <table cellspacing="0" style="border: 2px dashed #FB4314; width: 300px; height: 200px;">
-            <tr>
-                <th>Name:</th><td>CodexWorld</td>
-            </tr>
-            <tr style="background-color: #e0e0e0;">
-                <th>Email:</th><td>contact@codexworld.com</td>
-            </tr>
-            <tr>
-                <th>Website:</th><td><a href="http://www.codexworld.com">www.codexworld.com</a></td>
-            </tr>
-        </table>
-    </body>
-    </html>';
+    $message = "
+        <html>
+            <head>
+                <title>Welcome to Hyntec IT Services</title>
+            </head>
+             <body>
+                <h1>Thanks you for joining with us!</h1>
+                <table cellspacing='0' style='width: 50%; height: 200px;'>
+                    <tr style='background-color: #d4d4d4;'>
+                        <th>Name:</th><td>.$contact_name.</td>
+                    </tr>
+                    <tr style='background-color: #e0e0e0;'>
+                        <th>Email:</th><td>.$contact_email.</td>
+                    </tr>
+                    <tr style='background-color: #d4d4d4;'>
+                        <th>Mobile Number:</th><td>.$contact_number.</td>
+                    </tr>
+                    <tr style='background-color: #e0e0e0;'>
+                        <th>Subject:</th><td>.$subject.</td>
+                    </tr> 
+                    <tr style='background-color: #d4d4d4;'>
+                        <th>Mesaage:</th><td>.$message.</td>
+                    </tr>
+                    <tr style='background-color: #e0e0e0;'>
+                        <th>Service Type:</th><td>.$service_type.</td>
+                    </tr> 
+                    <tr style='background-color: #d4d4d4;'>
+                        <th>Service Location:</th><td>.$service_location.</td>
+                    </tr>
+                    <tr style='background-color: #e0e0e0;'>
+                        <th>Sent Date:</th><td>.$date.$time.</td>
+                    </tr> 
+                 </table>
+            </body>
+        </html>";
   
     mail($to, $subject, $message, $headers); 
-    echo "success";
+    echo "Mail sent Successfully";
   
 }
 else{
