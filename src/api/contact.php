@@ -26,6 +26,42 @@ if (isset($_POST->contact_name)) {
             
         $userdata = $conn->query($sql);
 		echo "Data Saved Successfully";
+  
+    $date = date('d/m/Y');
+    $time = date('H:i:s');
+  
+    $to      = 'info@hyntec.in'; 
+    $subject = 'Important:Contact the Customer';  
+    $headers = 'From: hemii1413@gmail.com' . "\r\n" . 
+              'Reply-To: hemii1413@gmail.com' . "\r\n" . 
+              'Content-Type: text/html; charset=ISO-8859-1\r\n' .
+              'X-Mailer: PHP/' . phpversion(); 
+  
+    $message = 'Hello';
+  $htmlContent = '
+    <html>
+    <head>
+        <title>Welcome to CodexWorld</title>
+    </head>
+    <body>
+        <h1>Thanks you for joining with us!</h1>
+        <table cellspacing="0" style="border: 2px dashed #FB4314; width: 300px; height: 200px;">
+            <tr>
+                <th>Name:</th><td>CodexWorld</td>
+            </tr>
+            <tr style="background-color: #e0e0e0;">
+                <th>Email:</th><td>contact@codexworld.com</td>
+            </tr>
+            <tr>
+                <th>Website:</th><td><a href="http://www.codexworld.com">www.codexworld.com</a></td>
+            </tr>
+        </table>
+    </body>
+    </html>';
+  
+    mail($to, $subject, $message, $headers); 
+    echo "success";
+  
 }
 else{
 	echo "Error Occured";
