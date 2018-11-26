@@ -2,7 +2,10 @@
   <div class="container">
     <div class="row myfooter">
       <div class="col-sm-6 footer-content">
-        <div class="pull-left">© Hyntec IT Services 2018 | <a href="/home">Privacy Policy</a> | <a href="/home">Terms of Use</a></div>
+        <div class="pull-left">
+          © Hyntec IT Services 2018 | <a (click)="open(content)">Privacy Policy</a>
+          <!-- | <a href="/home">Terms of Use</a> -->
+        </div>
       </div>
       <div class="col-sm-6">
         <div class="pull-right"><app-social-icons></app-social-icons></div>
@@ -10,3 +13,11 @@
     </div>
   </div>
 </footer>
+
+<ng-template #content let-modal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title"><span class="modal-header-text">Privacy policy</span></h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()"><span aria-hidden="true">&times;</span></button>
+  </div>
+  <div class="modal-body"><app-policy></app-policy></div>
+</ng-template>

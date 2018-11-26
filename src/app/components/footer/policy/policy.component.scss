@@ -1,0 +1,20 @@
+.terms-conditions {
+  padding: 1em;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+.terms-header {
+  color: #1476ac;
+  font-weight: 600;
+}
+
+.contact-details {
+  color: #1476ac;
+  a {
+    color: #22313e;
+    &:hover {
+      text-decoration: none;
+    }
+    cursor: pointer;
+  }
+}

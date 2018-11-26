@@ -1,0 +1,14 @@
+@media (min-width: 576px) and (max-width: 2000px) {
+  .installation-image {
+    height: 300px;
+    width: 400px;
+    max-width: none;
+    max-height: none;
+  }
+}
+@media (max-width: 575px) {
+  .installation-image {
+    max-width: -webkit-fill-available;
+    max-height: -webkit-fill-available;
+  }
+}

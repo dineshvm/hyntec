@@ -9,9 +9,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { PolicyComponent } from './components/footer/policy/policy.component';
 
 @NgModule({
-  declarations: [AppComponent, COMPONENTS],
+  declarations: [AppComponent, COMPONENTS, PolicyComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

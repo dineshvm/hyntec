@@ -26,6 +26,9 @@ footer {
 
 .footer-content {
   top: 7px;
+  a {
+    cursor: pointer;
+  }
 }
 @media (max-width: 576px) {
   .footer-content {

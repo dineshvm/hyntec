@@ -1,0 +1,75 @@
+.context-dark,
+.bg-gray-dark,
+.bg-primary {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-classic a,
+.footer-classic a:focus,
+.footer-classic a:active {
+  color: #ffffff;
+}
+.quick-link-container h4 {
+  /* padding-left: 10px;
+  border-left: 3px solid #1476ac; */
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #1476ac;
+}
+.nav-list li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.nav-list li a:hover:before {
+  margin-left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-list li {
+  padding: 3px 0;
+  -webkit-transition: 0.2s all ease;
+  -moz-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+}
+.nav-list li:hover {
+  padding: 3px 0;
+  margin-left: 5px;
+  font-weight: 700;
+}
+.nav-list li a i {
+  margin-right: 5px;
+}
+.nav-list li:hover a i {
+  font-weight: 700;
+}
+.nav-list li a:before {
+  /*  content: '\f14f';
+  font: 400 21px/1 'Material Design Icons'; */
+  color: #4d6de6;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: -28px;
+  margin-right: 7px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.22s ease;
+}
+
+.readMoreBtn {
+  font-size: 12px;
+}
