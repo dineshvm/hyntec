@@ -83,11 +83,13 @@ export class ModalFormComponent implements OnInit {
       this.dataService.postMessage(tempObj).subscribe(
         resp => {
           this.isSubmitting = false;
+          this.submitted = false;
           this.contactModalForm.reset();
           this.toastr.success('Message Sent Successfully');
         },
         error => {
           this.isSubmitting = false;
+          this.submitted = false;
           this.toastr.error(`Something Error Occured.\n Please try again`);
         }
       );

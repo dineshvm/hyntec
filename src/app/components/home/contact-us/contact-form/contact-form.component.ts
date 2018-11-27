@@ -52,11 +52,13 @@ export class ContactFormComponent implements OnInit {
       this.dataService.postMessage(this.contactForm.value).subscribe(
         resp => {
           this.isSubmitting = false;
+          this.submitted = false;
           this.contactForm.reset();
           this.toastr.success('Message Sent Successfully');
         },
         error => {
           this.isSubmitting = false;
+          this.submitted = false;
           console.log(error);
           this.toastr.error(`Something Error Occured.\n Please try again`);
         }
