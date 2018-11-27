@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { DataService } from '../../services/data.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact',
@@ -8,12 +10,16 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
   isLoading = true;
-
+  isSubmitting = false;
   public contactForm: FormGroup;
 
   submitted = false;
 
-  constructor(public fb: FormBuilder) {}
+  constructor(
+    public fb: FormBuilder,
+    private dataService: DataService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     this.buildForm();
@@ -36,13 +42,23 @@ export class ContactComponent implements OnInit {
     return this.contactForm.controls;
   }
   onSubmit() {
-    console.log(this.contactForm.value);
     this.submitted = true;
-
     // stop here if form is invalid
     if (this.contactForm.invalid) {
       return;
+    } else {
+      this.isSubmitting = true;
+      this.dataService.postMessage(this.contactForm.value).subscribe(
+        resp => {
+          this.isSubmitting = false;
+          this.contactForm.reset();
+          this.toastr.success('Message Sent Successfully');
+        },
+        error => {
+          this.isSubmitting = false;
+          this.toastr.error(`Something Error Occured.\n Please try again`);
+        }
+      );
     }
-    console.log(this.contactForm.value);
   }
 }

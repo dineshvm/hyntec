@@ -12,7 +12,7 @@
           </ng-container>
         </div>
         <label class="control-label">Where Do You Need The Service?</label>
-        <select class="form-control" placeholder="Select" formControlName = "serviceLocation">
+        <select class="form-control" placeholder="Select" formControlName="serviceLocation">
           <option default hidden>Select</option>
           <option>Doorstep</option>
           <option>Service Centre</option>
@@ -22,7 +22,7 @@
         <br />
         <br />
         <div class="form-group text-center">
-          <button name="nextBtn" class="btnContact btn btn-primary nextBtn" (click)="onNextClick()">
+          <button name="nextBtn" class="modalBtn btn btn-primary nextBtn" (click)="onNextClick()">
             Next <i class="fa fa-arrow-right ml-1"></i>
           </button>
         </div>
@@ -95,11 +95,14 @@
               </div>
             </div>
             <div class="form-group text-center">
-              <button name="backBtn" class="btnContact btn btn-primary backBtn" (click)="onBackClick()">
+              <button name="backBtn" class="modalBtn btn btn-primary backBtn" (click)="onBackClick()">
                 <i class="fa fa-arrow-left ml-1"></i> Back
               </button>
-              <button type="submit" name="btnSubmit" class="btnContact btn btn-primary submitBtn" value="Send Message">
-                Send Message<i class="fa fa-paper-plane-o ml-1"></i>
+              <button type="submit" name="btnSubmit" class="modalBtn btn btn-primary submitBtn" value="Send Message">
+                <ng-container *ngIf="isSubmitting; else: elseTemplate">
+                  <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>Sending
+                </ng-container>
+                <ng-template #elseTemplate> Send Message<i class="fa fa-paper-plane-o ml-1"></i> </ng-template>
               </button>
             </div>
           </div>

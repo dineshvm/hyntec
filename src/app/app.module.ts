@@ -9,10 +9,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { PolicyComponent } from './components/footer/policy/policy.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './services/data.service';
 
 @NgModule({
-  declarations: [AppComponent, COMPONENTS, PolicyComponent],
+  declarations: [AppComponent, COMPONENTS],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,6 +22,7 @@ import { PolicyComponent } from './components/footer/policy/policy.component';
     NgbModule.forRoot(),
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     ToastrModule.forRoot({
       timeOut: 5000,
       positionClass: 'toast-top-right',
@@ -27,7 +30,7 @@ import { PolicyComponent } from './components/footer/policy/policy.component';
     }),
     NgSelectModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

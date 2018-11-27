@@ -33,6 +33,8 @@ import { ModalFormComponent } from './components/header/modal-form/modal-form.co
 
 import { QuickLinksComponent } from './components/services/quick-links/quick-links.component';
 
+import { PolicyComponent } from './components/footer/policy/policy.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -92,5 +94,6 @@ export const COMPONENTS = [
   NotificationComponent,
   ModalFormComponent,
   TestimonialComponent,
-  QuickLinksComponent
+  QuickLinksComponent,
+  PolicyComponent
 ];

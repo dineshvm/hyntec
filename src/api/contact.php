@@ -1,5 +1,19 @@
 <?php
-include('config.php');
+$mysql_hostname = "localhost";
+$mysql_user = "hyntec_user";
+$mysql_password = "hyntec";
+$mysql_database = "hyntec";
+$prefix = "";
+$dsn = "mysql:host=$mysql_hostname;dbname=$mysql_database";
+try {
+    $conn = new PDO($dsn, $mysql_user, $mysql_password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully"; 
+}
+catch(PDOException $e){
+    echo "Connection failed: " . $e->getMessage();
+}
 
 $_POST = json_decode(file_get_contents('php://input'));
 if (isset($_POST->contact_name)) {
@@ -31,8 +45,8 @@ if (isset($_POST->contact_name)) {
     $date = date('d/m/Y');
     $time = date('H:i:s');
   
-    $to      = 'info@hyntec.in'; 
-    $subject = 'Important:Contact the Customer '.$contact_name.; 
+    $to      = "info@hyntec.in"; 
+    $subject = "Important:Contact the Customer $contact_name"; 
 
     /* $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -43,7 +57,7 @@ if (isset($_POST->contact_name)) {
 
     $headers = "From: hemii1413@gmail.com" . "\r\n" ;
     $headers .= "Reply-To: hemii1413@gmail.com" . "\r\n" ;
-    $headers .= "CC: hemii1413@gmail.com" . "\r\n";
+    $headers .= "CC: hemanth@hyntec.in" . "\r\n";
     $headers .= "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8" . "\r\b";
   
@@ -54,30 +68,30 @@ if (isset($_POST->contact_name)) {
             </head>
              <body>
                 <h1>Thanks you for joining with us!</h1>
-                <table cellspacing='0' style='width: 50%; height: 200px;'>
+                <table cellspacing='0' style='width: 75%; height: 200px;'>
                     <tr style='background-color: #d4d4d4;'>
-                        <th>Name:</th><td>.$contact_name.</td>
+                        <th>Name:</th><td>$contact_name</td>
                     </tr>
                     <tr style='background-color: #e0e0e0;'>
-                        <th>Email:</th><td>.$contact_email.</td>
+                        <th>Email:</th><td>$contact_email</td>
                     </tr>
                     <tr style='background-color: #d4d4d4;'>
-                        <th>Mobile Number:</th><td>.$contact_number.</td>
+                        <th>Mobile Number:</th><td>$contact_number</td>
                     </tr>
                     <tr style='background-color: #e0e0e0;'>
-                        <th>Subject:</th><td>.$subject.</td>
+                        <th>Subject:</th><td>$subject</td>
                     </tr> 
                     <tr style='background-color: #d4d4d4;'>
-                        <th>Mesaage:</th><td>.$message.</td>
+                        <th>Mesaage:</th><td>$message</td>
                     </tr>
                     <tr style='background-color: #e0e0e0;'>
-                        <th>Service Type:</th><td>.$service_type.</td>
+                        <th>Service Type:</th><td>$service_type</td>
                     </tr> 
                     <tr style='background-color: #d4d4d4;'>
-                        <th>Service Location:</th><td>.$service_location.</td>
+                        <th>Service Location:</th><td>$service_location</td>
                     </tr>
                     <tr style='background-color: #e0e0e0;'>
-                        <th>Sent Date:</th><td>.$date.$time.</td>
+                        <th>Sent Date:</th><td>$date.$time</td>
                     </tr> 
                  </table>
             </body>

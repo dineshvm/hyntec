@@ -6,6 +6,9 @@ import {
   FormControl
 } from '@angular/forms';
 
+import { DataService } from '../../../../services/data.service';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
@@ -14,7 +17,12 @@ import {
 export class ContactFormComponent implements OnInit {
   public contactForm: FormGroup;
   submitted = false;
-  constructor(public fb: FormBuilder) {}
+  isSubmitting = false;
+  constructor(
+    public fb: FormBuilder,
+    private dataService: DataService,
+    private toastr: ToastrService
+  ) {}
 
   public buildForm() {
     this.contactForm = this.fb.group({
@@ -28,19 +36,31 @@ export class ContactFormComponent implements OnInit {
   get f() {
     return this.contactForm.controls;
   }
-  onSubmit() {
-    console.log(this.contactForm.value);
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.contactForm.invalid) {
-      return;
-    }
-    console.log(this.contactForm.value);
-  }
 
   // initiate component
   public ngOnInit() {
     this.buildForm();
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    // stop here if form is invalid
+    if (this.contactForm.invalid) {
+      return;
+    } else {
+      this.isSubmitting = true;
+      this.dataService.postMessage(this.contactForm.value).subscribe(
+        resp => {
+          this.isSubmitting = false;
+          this.contactForm.reset();
+          this.toastr.success('Message Sent Successfully');
+        },
+        error => {
+          this.isSubmitting = false;
+          console.log(error);
+          this.toastr.error(`Something Error Occured.\n Please try again`);
+        }
+      );
+    }
   }
 }

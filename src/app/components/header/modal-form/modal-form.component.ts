@@ -6,6 +6,8 @@ import {
   FormControl,
   FormArray
 } from '@angular/forms';
+import { DataService } from '../../../services/data.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-modal-form',
@@ -15,6 +17,7 @@ import {
 export class ModalFormComponent implements OnInit {
   isCurrentEnabled = true;
   public contactModalForm: FormGroup;
+  isSubmitting = false;
   services = [
     {
       id: 'Computer Repair & Services',
@@ -29,7 +32,11 @@ export class ModalFormComponent implements OnInit {
   ];
   submitted = false;
 
-  constructor(public fb: FormBuilder) {}
+  constructor(
+    public fb: FormBuilder,
+    private dataService: DataService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     this.buildForm();
@@ -65,13 +72,34 @@ export class ModalFormComponent implements OnInit {
     this.submitted = false;
   }
   onSubmit() {
-    console.log(this.contactModalForm.value);
     this.submitted = true;
-
     // stop here if form is invalid
     if (this.contactModalForm.invalid) {
       return;
+    } else {
+      const tempObj = { ...this.contactModalForm.value };
+      tempObj.serviceList = this.getFormattedData(tempObj.serviceList);
+      this.isSubmitting = true;
+      this.dataService.postMessage(tempObj).subscribe(
+        resp => {
+          this.isSubmitting = false;
+          this.contactModalForm.reset();
+          this.toastr.success('Message Sent Successfully');
+        },
+        error => {
+          this.isSubmitting = false;
+          this.toastr.error(`Something Error Occured.\n Please try again`);
+        }
+      );
     }
-    console.log(this.contactModalForm.value);
+  }
+  getFormattedData(list) {
+    const tempArr = [];
+    list.map((item, i) => {
+      if (item) {
+        tempArr.push(this.services[i].id);
+      }
+    });
+    return tempArr.join(',');
   }
 }

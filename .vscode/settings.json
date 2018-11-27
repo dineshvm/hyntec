@@ -4,7 +4,7 @@
     "prettier.printWidth": 140,
     "prettier.singleQuote": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
     "vsicons.projectDetection.autoReload": true,
     "explorer.confirmDelete": false
 }
