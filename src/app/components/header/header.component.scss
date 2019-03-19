@@ -82,6 +82,28 @@
   }
 }
 
+.shopBtn {
+  border: none;
+  background: #1476ac;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.25em 1em;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  &:hover {
+    background: #1476ac;
+  }
+  .shopLink {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 .contact-form-modal {
   .modal-header {
     padding: 0.2em 1em;
